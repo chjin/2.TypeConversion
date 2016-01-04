@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1.암시적형변환</title>
+    <script>
+        /*
+        문자를 숫자로 형변환 ==>없음.
+         */
+        var a=30;
+        var result= 1 +a+ 10;
+        alert("result = " +result);
+
+        var a="30";
+        var result= 1 +a+ 10;
+        alert("result = " +result);
+
+        /*
+        0.숫자를 문자로 암시적 형변환
+         */
+        var a=30;
+        var result= a+ ""+ 10;
+        alert("result = " +result);
+        /*
+        1.불린값을 숫자로 암시적 형변환
+         */
+        var result=2+true;
+        alert("result = " +result);
+        /*
+        2.불린값을 문자열로 암시적 형변환
+         */
+        var result="2"+true;
+        alert("result = " +result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

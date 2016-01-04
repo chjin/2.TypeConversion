@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2.명시적형변환</title>
+    <script src="libs/jquery-1.11.3.min.js"></script>
+    <script>
+        /*
+        문자를 숫자로, 숫자를 문자로 형변환
+         */
+        /*
+        0.문자를 정수로 명시적 형변환- parseInt(), Number()
+         */
+        var test="300";
+        var result=parseInt(test)+10;
+        document.write("result = " +result);
+        document.write("<br>");
+
+        /*
+        1.문자를 실수로 명시적 형변환- parseFloat(), Number()
+         */
+        var test="300.35";
+        var result=Number(test)+10;
+        document.write("result = " +result);
+        document.write("<br>");
+
+        /*
+        2.숫자를 문자로 명시적 형변환 (3가지 방법)
+            : 일반 문자형 ==> String()
+              16진수 문자형 ==> toString()
+              실수 문자형 ==> toFixed()
+         */
+        var test1=15;
+        var result=String(test1)+10;
+        document.write("result = " +result);
+        document.write("<br>");
+
+        var result=test1.toString(16)+10;
+        document.write("result = " +result);
+        document.write("<br>");
+
+        var result=test1.toString(16);
+        document.write("result = " +result);
+        document.write("<br>");
+/*
+        $(document).ready(function(){
+            var bgColor=0xF00;
+            $("body").css("background-color","#"+bgColor.toString(16));
+        });
+        */
+        /*
+        1초마다 한번씩 배경색을 랜덤하게 변경==>이때 명시적 형변환 사용.
+         */
+        $(document).ready(function(){
+            setInterval(function(){
+                //1초마다 한번씩 배경색 바뀜. 0~0xffffff
+                var color=Math.random()*0xffffff;
+                //실수를 정수로 명시적 형변환
+                color=parseInt(color);
+                //정수를 16진수 문자로 명시적 형변환
+                color=color.toString(16);
+                $("body").css("background-color","#"+color);
+            },1000);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
